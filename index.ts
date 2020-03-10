@@ -27,12 +27,12 @@ const rolePolicy = new aws.iam.RolePolicy("builder-role-policy", {
             ],
             Effect: "Allow",
             Resource: "*"
-        }
-        // {
-        //     Effect: "Allow",
-        //     Action: "iam:PassRole",
-        //     Resource: "*"
-        // }
+        },
+        {
+            Effect: "Allow",
+            Action: "iam:PassRole",
+            Resource: "*"
+        },
     ]
     })
 });
