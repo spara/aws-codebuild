@@ -27,12 +27,12 @@ const rolePolicy = new aws.iam.RolePolicy("builder-role-policy", {
             ],
             Effect: "Allow",
             Resource: "*"
+        },
+        {
+            Effect: "Allow",
+            Action: "iam:PassRole",
+            Resource: "*"
         }
-        // {
-        //     Effect: "Allow",
-        //     Action: "iam:PassRole",
-        //     Resource: "*"
-        // }
     ]
     })
 });
@@ -43,7 +43,7 @@ const policy = new aws.iam.Policy("mypolicy", {
         Version: "2012-10-17",
         Statement: [{
             Action: [
-              "ec2:Describe*"
+                "codebuild:CreateProject"
             ],
             Effect: "Allow",
             Resource: "*"
@@ -51,10 +51,10 @@ const policy = new aws.iam.Policy("mypolicy", {
     })
 });
 
+// Attach user policy to the role
 const rolePolicyAttachment = new aws.iam.RolePolicyAttachment("rolepolicyattachment", {
     role: builderRole,
-    // policyArn: 'arn:aws:iam::aws:rolePolicy',
-    policyArn: policy.arn
+    policyArn: policy.arn,
 });
 
 const user = new aws.iam.User("myuser");
@@ -88,7 +88,7 @@ const buildProject = new aws.codebuild.Project("aws-codebuild", {
   serviceRole: builderRole.arn,
   source: {
     type: "GITHUB",
-    location: "https://github.com/spara/aws-codebuil.git"
+    location: "https://github.com/spara/aws-codebuild.git"
   },
   environment: {
     type: "LINUX_CONTAINER",
