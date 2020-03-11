@@ -13,4 +13,4 @@ phases:
       - pulumi login --non-interactive
   build:
     commands:
-      - pulumi up --non-interactive
+      - pulumi up spara/aws-codebuild/dev --non-interactive
