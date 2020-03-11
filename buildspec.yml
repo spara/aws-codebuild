@@ -13,4 +13,4 @@ phases:
       - pulumi login --non-interactive
   build:
     commands:
-      - pulumi up aws-codebuild-dev --non-interactive
+      - pulumi up dev --non-interactive
