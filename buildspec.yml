@@ -13,4 +13,5 @@ phases:
       - pulumi login --non-interactive
   build:
     commands:
-      - pulumi up --yes
+      - pulumi stack select dev
+      - pulumi up --non-interactive
