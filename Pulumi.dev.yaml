@@ -1,7 +1,0 @@
-encryptionsalt: v1:NHi2BF6JGOQ=:v1:4YOT32XA3m8TkSHO:h0WxlsDjwY73a4EYjvzewlEfFJmHAQ==
-config:
-  aws-codebuild:github-token:
-    secure: v1:QFr7KvnB+noE5TWk:1UzLbn3wJXGAxKhEl27DV8jh6+amGl6y3pCoTyOGfx4/ApfsMIgN17VWLKpHqgdHNSZB6f7eIJA=
-  aws-codebuild:pulumi-access-token:
-    secure: v1:8pK7S82b1vLlJUYl:/4tTsyfrhJEd0tSo25+4jA+f9pT5oEyu2X1tTrZP1+KI1zIb3bQgI45wrxsVx+/5fwUsb3nQUAVBnHun
-  aws:region: us-west-2
