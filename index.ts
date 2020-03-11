@@ -39,9 +39,14 @@ const rolePolicy = new aws.iam.RolePolicy("builder-role-policy", {
         {
             Effect: "Allow",
             Action: [
-                "logs:*"
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "logs:DescribeLogStreams"
             ],
-            Resource: "arn:aws:logs:::*"
+            Resource: [
+                "arn:aws:logs:*:*:*"
+            ]
         }
     ]
     })
