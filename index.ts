@@ -47,6 +47,15 @@ const rolePolicy = new aws.iam.RolePolicy("builder-role-policy", {
             Resource: [
                 "arn:aws:logs:*:*:*"
             ]
+        },
+        {
+            Effect: "Allow",
+            Action: [
+                "ssm:GetParameters"
+            ],
+            Resource: [
+                "*"
+            ]
         }
     ]
     })
