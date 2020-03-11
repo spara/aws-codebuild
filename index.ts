@@ -119,7 +119,7 @@ new aws.codebuild.Webhook('aws-codebuild-webhook', {
             },
             {
                 "type": "HEAD_REF", 
-                "pattern": "^refs/heads/master$"
+                "pattern": "refs/heads/master"
             }
         ],
       },
