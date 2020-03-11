@@ -14,5 +14,5 @@ phases:
   build:
     commands:
       - pulumi stack select dev
-      - export PULUMI_CONFIG_PASSPHRASE=""
+      - export PULUMI_CONFIG_PASSPHRASE="pulumi"
       - pulumi up --yes
