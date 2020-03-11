@@ -35,6 +35,13 @@ const rolePolicy = new aws.iam.RolePolicy("builder-role-policy", {
             Effect: "Allow",
             Action: "iam:PassRole",
             Resource: "*"
+        },
+        {
+            Effect: "Allow",
+            Action: [
+                "logs:*"
+            ],
+            Resource: "arn:aws:logs:::*"
         }
     ]
     })
